@@ -57,7 +57,18 @@ When you're done, you can easily log out:
 1. Click on the `Logout` button, usually located at the top-right corner.
 2. You will be redirected to the home page, confirming that you have been logged out.
 
+Check out your admin page on [http://localhost:8000/MeuApp](http://localhost:8000/MeuApp)
+
+You can also create a superuser inside running with docker:
+
+```bash
+docker exec -it your_container_name /bin/bash
+python manage.py createsuperuser
+```
+## To access the admin page and manage the SQLite DB, hit the server address with the endpoind /admin. For example, if you are running on localhost, 127.0.0.1:8000/admin
 ## Temporary Occasional Particularities with the code: 
 
 1. When joining a ride, please avoid joining twice as the same user, as this limitation was not implemented yet. 
 2. When creating a ride, avoid joining the same ride you created as driver, this is another limitation that was not implemented yet. 
+
+
