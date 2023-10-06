@@ -51,4 +51,12 @@ Create superuser to manage your database information
 python manage.py createsuperuser
 ```
 
-Check out your admin page on [http://localhost:8000/admin](http://localhost:8000/admin)
+Check out your admin page on [http://localhost:8000/MeuApp](http://localhost:8000/MeuApp)
+
+## Running with docker + docker-compose
+
+```bash
+docker-compose up --build
+```
+
+Check out your admin page on [http://localhost:8000/MeuApp](http://localhost:8000/MeuApp)
