@@ -60,3 +60,10 @@ docker-compose up --build
 ```
 
 Check out your admin page on [http://localhost:8000/MeuApp](http://localhost:8000/MeuApp)
+
+You can also create a superuser inside running with docker:
+
+```bash
+docker exec -it your_container_name /bin/bash
+python manage.py createsuperuser
+```
