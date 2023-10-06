@@ -1,0 +1,98 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* This ensures full height for both elements */
+    background-color: #0a0a16 !important;
+    /* Darker purple-blue background */
+    color: #ffffff;  /* Bright white text for better contrast */
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+body {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+}
+
+.container {
+    width: 75%;
+    max-width: 800px;
+    background-color: #1f1f2b;  
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(189, 147, 249, 0.7); 
+    padding: 30px;
+    color: #ffffff;
+}
+.content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; /* Center items vertically */
+    align-items: center;     /* Center items horizontally */
+    height: 80vh;            /* Adjust as needed */
+}
+
+header {
+    background: linear-gradient(135deg, #9d4edd, #6a3db8);
+    color: #ffffff; /* Ensure header text is white for better readability */
+    text-align: center;
+    padding: 1em 0;
+    border-radius: 25px 25px 0 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background: #0a0a16; /* Matching the nav background to body background for a seamless look */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    list-style-type: none;
+    padding: 0;
+}
+nav li {
+    margin: 0 15px; /* Adjust as needed */
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff; /* Bright white text for links */
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #9d4edd;
+    color: #0a0a16; /* Darker color on hover to contrast with the purple background */
+}
+
+main {
+    padding: 30px;
+    border-radius: 0 0 25px 25px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #9d4edd;  
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(135deg, #9d4edd, #6a3db8);
+    color: #ffffff; /* White text for the footer */
+    border-radius: 0 0 25px 25px;
+}

@@ -1,0 +1,53 @@
+{% extends 'MeuApp/base.html' %}
+
+{% block content %}
+    <h2>Ride List</h2>
+    <ul>
+        {% for ride in rides %}
+    <li>
+        <strong>Driver:</strong> {{ ride.driver.user.username }} <br>
+        <strong>Departure Time:</strong> {{ ride.departure_time }} <br>
+        <strong>Destination:</strong> {{ ride.destination }} <br>
+        <strong>Free Seats:</strong> {{ ride.free_seats }}
+        <form method="post" action="{% url 'MeuApp:join_ride' ride.id %}
+        ">
+            {% csrf_token %}
+            <button type="submit">Join Ride</button>
+        </form>
+        <strong>Passengers:</strong>
+        <ul>
+            {% for passenger in ride.passengers.all %}
+                <li>{{ passenger.user.username }}</li>
+            {% endfor %}
+        </ul>
+
+    </li>
+{% endfor %}
+    </ul>
+    
+    <script>
+        function addPassenger(rideId) {
+            var rideElement = document.getElementById('ride-' + rideId);
+            var inputElement = rideElement.querySelector('.passenger-input');
+            var passengersElement = rideElement.querySelector('.passengers');
+            var freeSeatsElement = rideElement.querySelector('.free-seats');
+            
+            var passengerName = inputElement.value.trim();
+            if(passengerName === '' || parseInt(freeSeatsElement.textContent) <= 0) {
+                return; // Don't do anything if the input is empty or no free seats available
+            }
+            
+            // Append passenger name to passengers list
+            if(passengersElement.textContent !== '') {
+                passengersElement.textContent += ', ';
+            }
+            passengersElement.textContent += passengerName;
+            
+            // Decrease the number of free seats
+            freeSeatsElement.textContent = parseInt(freeSeatsElement.textContent) - 1;
+            
+            // Clear the input
+            inputElement.value = '';
+        }
+    </script>
+{% endblock %}
